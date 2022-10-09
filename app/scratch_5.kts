@@ -55,8 +55,8 @@ fun main() {
             val numbers = arrayOf(0, 2, 4, 6, 10, 11, 12, 13)
             val divisors = ArrayList<Int>()
             numbers.filter { n -> n != 0 }.forEach { num ->
-                if (it % num == 0) {
-                    divisors.add(it)
+                if (num % it == 0) {
+                    divisors.add(num)
                 }
             }
             if (divisors.isNotEmpty()) {
@@ -69,4 +69,5 @@ fun main() {
 }
 
 main()
+
 
