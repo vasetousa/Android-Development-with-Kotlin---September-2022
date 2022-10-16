@@ -7,23 +7,82 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.FIrstProject.AppBarOverlay">
 
     </com.google.android.material.appbar.AppBarLayout>
 
+        <EditText
+        android:id="@+id/textEditField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="70dp"
+        android:ems="10"
+        android:hint="Enter your text here"
+        app:layout_anchor="@+id/toolbar"
+        app:layout_anchorGravity="bottom|center" />
+
+
     <include
         android:id="@+id/include"
-        layout="@layout/content_main" />
+        layout="@layout/content_main"
+        app:layout_anchor="@+id/textView"
+        app:layout_anchorGravity="top|center" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@android:drawable/ic_dialog_email"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_editor_absoluteY="659dp" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/include"
+        app:popupTheme="@style/Theme.FIrstProject.PopupOverlay"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:text="@string/my_name"
+        android:textColor="@color/pink"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="406dp" />
+
+    <Button
+        android:id="@+id/SetTextButton"
+        android:onClick="getSet"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="150dp"
+        android:text="Set text"
+        app:layout_anchor="@+id/textEditField"
+        app:layout_anchorGravity="bottom|center"
+        />
+
+    <Button
+        android:id="@+id/testButton"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="750dp"
+        android:text="Test"
+        app:layout_anchor="@+id/textEditField"
+        app:layout_anchorGravity="bottom|center" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
